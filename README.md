@@ -13,6 +13,14 @@ This game was created with the help of pygame, random, Enum and numedtuple
 (last 2 libraries are just to make my life easy.
 ___
 
-## 2. 
+## 2. preparing the environment to be used by agent
+Extra library used
+1. numpy
+
+changed some function so that they take input without being users. 
+And numpy is only used for comparing.
+___
+
+## 3. Agent
 
  
