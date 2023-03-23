@@ -9,6 +9,8 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
+import torch
+
 class Person:
 
     def __init__(self, name, age=22):
@@ -29,5 +31,10 @@ if __name__ == '__main__':
     p1 = Person("jay", 33)
 
     print(p1.getAge())
+    print(torch.__version__)
+    print(torch.cuda.is_available())
+
+    if torch.cuda.is_available():
+        print('it works')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -23,7 +23,7 @@ class Direction(Enum):
 
 Point = namedtuple('Point', 'x, y')
 BLOCK_SIZE = 20
-SPEED = 10
+SPEED = 40
 
 WHITE = (255, 255, 255)
 RED = (200, 0, 0)
@@ -92,13 +92,13 @@ class AISnakeGame:
             #         self.direction = Direction.DOWN
 
         # move snake
-        self.move(action)
+        self._move(action)
         self.snake.insert(0, self.head)
 
         # check for game over
         reward = 0
         game_over = False
-        if self._is_collision() or self.frame_iteration > 100*len(self.snake):
+        if self.is_collision() or self.frame_iteration > 100*len(self.snake):
             reward = -10
             game_over = True
             return game_over, self.score, reward
@@ -118,7 +118,7 @@ class AISnakeGame:
         #return score and game status
         return game_over, self.score, reward
 
-    def move(self, action):
+    def _move(self, action):
         # [stright, right, left]
 
         clock_wise = [Direction.RIGHT, Direction.DOWN, Direction.LEFT, Direction.UP]
@@ -150,7 +150,7 @@ class AISnakeGame:
 
         self.head = Point(x,y)
 
-    def _is_collision(self, pt=None):
+    def is_collision(self, pt=None):
 
         if pt is None:
             pt = self.head

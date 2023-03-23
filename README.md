@@ -21,6 +21,15 @@ changed some function so that they take input without being users.
 And numpy is only used for comparing.
 ___
 
-## 3. Agent
+## 3. Agent and model
+Libraries used
+1. import torch 
+2. random 
+3. deque (collections)
+4. numpy
+5. torch 
+6. os
 
- 
+ Now we build a model and agent which plays a game for us and the 
+ model was created with the help of pytorch library which takes in 11 input and give 3
+ output
