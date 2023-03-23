@@ -9,8 +9,25 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
+class Person:
+
+    def __init__(self, name, age=22):
+        self.name = name
+        self.age = age
+
+    def getName(self):
+        return self.name
+    def getAge(self):
+        return self.age
+
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
+
+    p1 = Person("jay", 33)
+
+    print(p1.getAge())
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
